@@ -1,16 +1,11 @@
 //src/sanity/env.ts
 
-export const apiVersion = process.env.SANITY_STUDIO_API_VERSION || '2024-10-17';
+export const apiVersion = process.env.SANITY_STUDIO_API_VERSION || '2024-04-15';
 
-export const dataset = assertValue(
-  process.env.SANITY_STUDIO_DATASET,
-  'Missing environment variable: SANITY_STUDIO_DATASET'
-);
+// Use development values if environment variables are not set
+export const dataset = process.env.SANITY_STUDIO_DATASET || 'development';
 
-export const projectId = assertValue(
-  process.env.SANITY_STUDIO_PROJECT_ID,
-  'Missing environment variable: SANITY_STUDIO_PROJECT_ID'
-);
+export const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'development';
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {

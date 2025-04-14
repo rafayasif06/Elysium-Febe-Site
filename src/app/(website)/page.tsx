@@ -13,6 +13,7 @@ import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
 import ScrollUp from '@/components/Common/ScrollUp';
 import Footer from '@/components/Footer';
+import AnniverseryAnimation from '@/components/AnniverseryAnimation/AnniverseryAnimation';
 
 // Import the presentational ListOfPost
 import ListOfPost from '@/components/Blog/ListOfPost';
@@ -29,9 +30,9 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <ScrollUp />
+      {/* <ScrollUp /> */}
       <main>
-        <Hero />
+        {/* <Hero />
         <USP />
         <AboutSectionOne />
         <AboutSectionTwo />
@@ -43,9 +44,10 @@ const Home: React.FC = () => {
           <ListOfPost posts={posts} />
         )}
         <Video />
-        <Brands />
-        <Carousel />
-        <Footer />
+        <Brands /> 
+        <Carousel />*/}
+        <AnniverseryAnimation/>
+        {/* <Footer /> */}
       </main>
     </>
   );
