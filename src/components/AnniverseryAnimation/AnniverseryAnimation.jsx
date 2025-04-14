@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Scale } from "lucide-react";
+import { getDisplayName } from "next/dist/shared/lib/utils";
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -16,21 +17,20 @@ const AnniverseryAnimation = () => {
     () => {
       gsap.to(".text", {
         opacity: 1,
-        color: "blue",
-        translateX: "-80%",
-        letterSpacing: "0.5rem",
-        scale: 18,
-
+        color: "#ffffff",
+        translateX: "-50%",
+        letterSpacing: "0.3rem",
+        scale: 8,
         scrollTrigger: {
           trigger: ".text",
           markers: true,
           pin: true,
           start: "top 10%",
-          end: "bottom ",
-          scrub:5,
-          OnLeave: () => {
+          end: "bottom",
+          scrub: 1.5,
+          onLeave: () => {
             gsap.to(".text", {
-              opacity: 0,
+              display: "hidden",
             });
           },
         },
