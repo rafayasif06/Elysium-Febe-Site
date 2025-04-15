@@ -31,6 +31,7 @@ const config: Config = {
         serif: ['var(--font-suranna)', 'serif'],
         fragmentSans: ['PP Fragment Sans', 'sans-serif'],
         fragmentSerif: ['PP Fragment Serif Light', 'serif'],
+        spaceGrotesk: ['Space Grotesk', 'sans-serif'],
       },
       fontSize: {
         h1: 'clamp(3.5rem, 4.6vw, 5.2rem)',
