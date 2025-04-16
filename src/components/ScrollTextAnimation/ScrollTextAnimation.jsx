@@ -19,12 +19,16 @@ export default function ScrollTextAnimation() {
     return (
       <div
         ref={ref}
-        style={{ position: "relative", overflow: "hidden", margin: "20px 0" }}
+        className="relative overflow-hidden my-5 mx-0"
       >
         <motion.h3
           style={{ y }}
-          transition={{ duration: 0.5, delay }}
-          className="text-5xl md:text-9xl"
+          transition={{
+            duration: 1.2,
+            delay,
+            ease: "easeOut",
+          }}
+          className=" text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
         >
           {children}
         </motion.h3>
