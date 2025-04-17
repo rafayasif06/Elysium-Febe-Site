@@ -4,9 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
 import ScrollTextAnimation from "../ScrollTextAnimation/ScrollTextAnimation";
-import { VscPercentage } from "react-icons/vsc";
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -40,17 +38,17 @@ const AnniverseryAnimationLargeScreen = () => {
         scale: 16,
         duration: 4,
       });
-      tl.to(".number h2", {
-        opacity: 0,
-        duration: 0.1,
-        color: "#ffffff",
-      });
+      // tl.to(".number h2", {
+      //   opacity: 0,
+      //   duration: 0.1,
+      //   color: "#ffffff",
+      // });
     },
     { scope: container }
   );
 
   return (
-    <section className="mt-60 hidden md:block">
+    <section className="mt-4 hidden md:block">
       <div
         className="w-full mx-auto flex flex-col bg-black text-white"
         ref={container}

@@ -4,7 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
 import ScrollTextAnimation from "../ScrollTextAnimation/ScrollTextAnimation";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -38,16 +37,16 @@ const AnniverseryAnimationSmallScreen = () => {
         scale: 30,
         translateX: "-10%",
       });
-      tl.to(".number h2", {
-        opacity: 0,
-        color: "#000",
-      });
+      // tl.to(".number h2", {
+      //   opacity: 0,
+      //   color: "#000",
+      // });
     },
     { scope: container }
   );
 
   return (
-    <section className="mt-60  md:hidden ">
+    <section className="mt-16  md:hidden ">
       <div
         className="w-full mx-auto flex flex-col bg-black text-white"
         ref={container}
