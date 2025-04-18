@@ -7,8 +7,8 @@ import React from "react";
 import Hero from "@/components/Hero/Hero";
 import USP from "@/components/USP/USP";
 // import Carousel from "@/components/Carousel/Carousel";
-// import Video from "@/components/Video";
-// import Brands from "@/components/Brands";
+import Video from "@/components/Video";
+import Brands from "@/components/Brands";
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     <>
       <ScrollUp />
       <main>
-         <Hero />
+        <Hero />
         <USP />
         <AboutSectionOne />
         <AboutSectionTwo />
@@ -44,10 +44,18 @@ const Home: React.FC = () => {
         ) : (
           <ListOfPost posts={posts} />
         )}
-        {/* <Video /> 
-        <Brands /> */}
-        <AnniverseryAnimationLargeScreen />
-        <AnniverseryAnimationSmallScreen />
+        <Video />
+        <Brands />
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <>
+            <AnniverseryAnimationLargeScreen />
+            <AnniverseryAnimationSmallScreen />
+          </>
+        )}
         <Footer />
       </main>
     </>
