@@ -46,17 +46,17 @@ const Home: React.FC = () => {
         <USP />
         <AboutSectionOne />
         <AboutSectionTwo />
+        {isLoading ? (
+          <div className="h-[200vh]">Loading...</div>
+        ) : error ? (
+          <div className="h-[200vh]">{error}</div>
+        ) : (
+          <ListOfPost posts={posts} />
+        )}
         <Video />
         <Brands />
         <AnniverseryAnimationLargeScreen />
         <AnniverseryAnimationSmallScreen />
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          <ListOfPost posts={posts} />
-        )}
         <Footer />
       </main>
     </>
