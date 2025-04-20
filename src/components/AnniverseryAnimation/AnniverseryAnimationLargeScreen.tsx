@@ -10,7 +10,7 @@ import ScrollTextAnimation from "../ScrollTextAnimation/ScrollTextAnimation";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const AnniverseryAnimationLargeScreen = () => {
-  const container = useRef();
+  const container = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -51,8 +51,7 @@ const AnniverseryAnimationLargeScreen = () => {
     <section className="mt-4 hidden md:block">
       <div
         className="w-full mx-auto flex flex-col bg-black text-white"
-        ref={container}
-      >
+        ref={container}>
         <div className="w-full  ">
           <ul className="number-container  w-1/2  font-thin mx-auto bg-transparent   text-[30vw] flex  justify-evenly items-center font-fragmentSans ">
             <h2>9</h2>
@@ -64,7 +63,10 @@ const AnniverseryAnimationLargeScreen = () => {
               </p>
             </h2>
             <h2 className="relative text-transparent">
-              % <span className="absolute left-0 bottom-[35%]  translate-y-1/2 font-serif text-9xl  text-white">%</span>
+              %{" "}
+              <span className="absolute left-0 bottom-[35%]  translate-y-1/2 font-serif text-9xl  text-white">
+                %
+              </span>
             </h2>
           </ul>
 

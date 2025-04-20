@@ -2,7 +2,7 @@
 
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Hero from "@/components/Hero/Hero";
 import USP from "@/components/USP/USP";
@@ -22,12 +22,21 @@ import useFetchPosts from "@/hooks/useFetchPosts";
 import { useTranslation } from "react-i18next";
 import { getFullLanguageName, LanguageCodes } from "@/lib/utils";
 import AnniverseryAnimationSmallScreen from "@/components/AnniverseryAnimation/AnniverseryAnimationSmallScreen";
+
 const Home: React.FC = () => {
   const { i18n } = useTranslation();
   const selectedLanguage = (i18n.language || "en") as LanguageCodes;
   const { posts, isLoading, error } = useFetchPosts(
     getFullLanguageName(selectedLanguage)
   );
+
+  const [isListOfPostRendered, setIsListOfPostRendered] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading && !error) {
+      setIsListOfPostRendered(true);
+    }
+  }, [isLoading, error]);
 
   return (
     <>
@@ -37,24 +46,16 @@ const Home: React.FC = () => {
         <USP />
         <AboutSectionOne />
         <AboutSectionTwo />
+        <Video />
+        <Brands />
+        <AnniverseryAnimationLargeScreen />
+        <AnniverseryAnimationSmallScreen />
         {isLoading ? (
           <div>Loading...</div>
         ) : error ? (
           <div>{error}</div>
         ) : (
           <ListOfPost posts={posts} />
-        )}
-        <Video />
-        <Brands />
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          <>
-            <AnniverseryAnimationLargeScreen />
-            <AnniverseryAnimationSmallScreen />
-          </>
         )}
         <Footer />
       </main>
