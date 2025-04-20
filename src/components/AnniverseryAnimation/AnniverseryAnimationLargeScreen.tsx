@@ -17,7 +17,7 @@ const AnniverseryAnimationLargeScreen = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".number-container",
-          markers: false,
+          markers: true,
           pin: true,
           start: "top 10%",
           end: "+=400%", // Making it scroll for 4 times the viewport height
@@ -48,9 +48,9 @@ const AnniverseryAnimationLargeScreen = () => {
   );
 
   return (
-    <section className="mt-4 hidden md:block">
+    <section className="mt-4 hidden md:block bg-gray-800">
       <div
-        className="w-full mx-auto flex flex-col bg-black text-white"
+        className="w-full mx-auto flex flex-col  text-white"
         ref={container}>
         <div className="w-full  ">
           <ul className="number-container  w-1/2  font-thin mx-auto bg-transparent   text-[30vw] flex  justify-evenly items-center font-fragmentSans ">

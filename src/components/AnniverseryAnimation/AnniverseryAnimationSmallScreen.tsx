@@ -16,11 +16,11 @@ const AnniverseryAnimationSmallScreen = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".number-container",
-          // markers: true,
+          markers: true,
           pin: true,
           start: "center center",
           end: "+=400%",
-          scrub: 1,
+          scrub: 2,
           pinSpacing: true,
         },
       });
@@ -30,17 +30,13 @@ const AnniverseryAnimationSmallScreen = () => {
       });
       tl.to(".inside-number", {
         opacity: 0,
-        duration: 0.1,
+        duration: 0,
       });
 
       tl.to(".number-container", {
         scale: 30,
-        translateX: "-10%",
+        // translateX: "-10%",
       });
-      // tl.to(".number h2", {
-      //   opacity: 0,
-      //   color: "#000",
-      // });
     },
     { scope: container }
   );
@@ -60,7 +56,7 @@ const AnniverseryAnimationSmallScreen = () => {
                 Customer
               </p>
             </h2>
-            <h2 className="relative text-transparent max-w-[122px] overflow-hidden  ">
+            <h2 className="relative text-transparent max-w-[122px] sm:max-w-[210px] overflow-hidden  ">
               %
               <span className="absolute left-0 bottom-[35%]  translate-y-1/2 font-serif text-7xl  text-white">
                 %
@@ -68,7 +64,7 @@ const AnniverseryAnimationSmallScreen = () => {
             </h2>
           </ul>
 
-          <div className="  w-full bg-stone-950 pt-[600px] sm:pt-[500px] ">
+          <div className="  w-full bg-yellow-500 pt-[680px] sm:pt-[700px] ">
             <div className="textContainer flex flex-col justify-center items-center  mx-auto w-full p-4 gap-y-6 ">
               <p className="text-base font-light">
                 Over 1500 Projects completed
