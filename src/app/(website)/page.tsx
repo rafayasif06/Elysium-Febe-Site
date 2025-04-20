@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Hero from "@/components/Hero/Hero";
 import USP from "@/components/USP/USP";
@@ -29,14 +29,6 @@ const Home: React.FC = () => {
   const { posts, isLoading, error } = useFetchPosts(
     getFullLanguageName(selectedLanguage)
   );
-
-  const [isListOfPostRendered, setIsListOfPostRendered] = useState(false);
-
-  useEffect(() => {
-    if (!isLoading && !error) {
-      setIsListOfPostRendered(true);
-    }
-  }, [isLoading, error]);
 
   return (
     <>
