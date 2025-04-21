@@ -17,11 +17,11 @@ const AnniverseryAnimationLargeScreen = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".number-container",
-          markers: true,
+          markers: false,
           pin: true,
           start: "top 10%",
-          end: "+=400%", // Making it scroll for 4 times the viewport height
-          scrub: 1, // Smoother scrubbing
+          end: "+=400%",
+          scrub: 1, 
         },
       });
       tl.to(".inside-number", {
@@ -34,21 +34,15 @@ const AnniverseryAnimationLargeScreen = () => {
       });
 
       tl.to(".number-container", {
-        // color: "#ffffff",
         scale: 16,
         duration: 4,
       });
-      // tl.to(".number h2", {
-      //   opacity: 0,
-      //   duration: 0.1,
-      //   color: "#ffffff",
-      // });
     },
     { scope: container }
   );
 
   return (
-    <section className="mt-4 hidden md:block bg-gray-800">
+    <section className="mt-4 hidden md:block ">
       <div
         className="w-full mx-auto flex flex-col  text-white"
         ref={container}>

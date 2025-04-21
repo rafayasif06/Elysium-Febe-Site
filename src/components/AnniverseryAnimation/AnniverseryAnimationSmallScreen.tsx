@@ -16,7 +16,7 @@ const AnniverseryAnimationSmallScreen = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".number-container",
-          markers: true,
+          markers: false,
           pin: true,
           start: "center center",
           end: "+=400%",
@@ -42,7 +42,7 @@ const AnniverseryAnimationSmallScreen = () => {
   );
 
   return (
-    <section className="mt-16  md:hidden ">
+    <section className="mt-16 block  md:hidden  ">
       <div
         className="w-full mx-auto flex flex-col bg-black text-white"
         ref={container}>
@@ -64,9 +64,9 @@ const AnniverseryAnimationSmallScreen = () => {
             </h2>
           </ul>
 
-          <div className="  w-full bg-yellow-500 pt-[680px] sm:pt-[700px] ">
+          <div className="  w-full pt-[680px] sm:pt-[500px] p-40 ">
             <div className="textContainer flex flex-col justify-center items-center  mx-auto w-full p-4 gap-y-6 ">
-              <p className="text-base font-light">
+              <p className="text-base font-light text-nowrap">
                 Over 1500 Projects completed
               </p>
               <ScrollTextAnimation />

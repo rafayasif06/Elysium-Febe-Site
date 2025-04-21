@@ -34,20 +34,20 @@ const Home: React.FC = () => {
     <>
       <ScrollUp />
       <main>
-        {/* <Hero />
+        <Hero />
         <USP />
         <AboutSectionOne />
-        <AboutSectionTwo /> */}
-        {/* {isLoading ? (
+        <AboutSectionTwo />
+        {isLoading ? (
           <div className="h-[200vh]">Loading...</div>
         ) : error ? (
           <div className="h-[200vh]">{error}</div>
         ) : (
           <ListOfPost posts={posts} />
-        )} */}
-        {/* <Video /> */}
+        )}
+        <Video />
         <Brands />
-        {/* <AnniverseryAnimationLargeScreen /> */}
+        <AnniverseryAnimationLargeScreen />
         <AnniverseryAnimationSmallScreen />
         <Footer />
       </main>

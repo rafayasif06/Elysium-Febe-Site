@@ -37,7 +37,7 @@ export default function ScrollTextAnimation() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen p-8">
+    <div ref={containerRef} className=" p-8">
       <div className="space-y-12 ">
         <AnimatedText>FEATURED</AnimatedText>
         <AnimatedText delay={0.1}>PROJECTS</AnimatedText>
